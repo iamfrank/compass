@@ -1,11 +1,17 @@
-var roset = document.getElementById('rose')
+var roset = document.getElementById('roset'),
+    heading_el = document.getElementById('heading'),
+    webkit_heading_el = document.getElementById('webkit-heading'),
+    absolute_el = document.getElementById('absolute')
 
 function orientationHandler(ev) {
-    requestAnimationFrame(showAlpha(ev.alpha))
+    requestAnimationFrame(showAlpha(ev))
 }
 
-function showAlpha(a) {
-    roset.style.transform = 'rotate(' + a + 'deg)'
+function showAlpha(ev) {
+    roset.style.transform = 'rotate(' + ev.alpha + 'deg)'
+    heading_el.innerHTML = ev.alpha
+    webkit_heading_el.innerHTML = ev.webkitCompassHeading
+    absolute_el.innerHTML = ev.absolute
 }
 
 window.addEventListener('deviceorientation', orientationHandler, false)
