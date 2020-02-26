@@ -36,7 +36,7 @@ h1 {
     width: 16rem;
 }
 
-#rose {
+#roset {
     position: absolute;
     height: 16rem;
     width: 16rem;
@@ -106,6 +106,7 @@ h1 {
     right: 0;
     color: #fff;
     opacity: .75;
+    text-align: right;
 }
 
 #hud dt {
