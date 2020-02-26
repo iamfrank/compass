@@ -1,7 +1,8 @@
 var roset = document.getElementById('roset'),
     heading_el = document.getElementById('heading'),
     webkit_heading_el = document.getElementById('webkit-heading'),
-    absolute_el = document.getElementById('absolute')
+    absolute_el = document.getElementById('absolute'),
+    accuracy_el = document.getElementById('accuracy')
 
 function orientationHandler(ev) {
     requestAnimationFrame(showAlpha(ev))
@@ -12,6 +13,7 @@ function showAlpha(ev) {
     heading_el.innerHTML = ev.alpha
     webkit_heading_el.innerHTML = ev.webkitCompassHeading
     absolute_el.innerHTML = ev.absolute
+    accuracy_el.innerHTML = ev.webkitCompassAccuracy
 }
 
 window.addEventListener('deviceorientation', orientationHandler, false)
