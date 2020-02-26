@@ -5,16 +5,21 @@ var roset = document.getElementById('roset'),
     accuracy_el = document.getElementById('accuracy')
 
 function orientationHandler(ev) {
-    requestAnimationFrame(showAlpha(ev))
+    data = {
+        heading: ev.alpha.toFixed(0),
+        webkitCompassHeading: ev.webkitCompassHeading,
+        absolute: ev.absolute,
+        webkitCompassAccuracy: ev.webkitCompassAccuracy
+    }
+    requestAnimationFrame(showAlpha(data))
 }
 
-function showAlpha(ev) {
-    var heading = ev.alpha.toFixed(0)
-    roset.style.transform = 'rotate(' + heading + 'deg)'
-    heading_el.innerHTML = heading
-    webkit_heading_el.innerHTML = ev.webkitCompassHeading
-    absolute_el.innerHTML = ev.absolute
-    accuracy_el.innerHTML = ev.webkitCompassAccuracy
+function showAlpha(data) {
+    roset.style.transform = 'rotate(' + data.heading + 'deg)'
+    heading_el.innerHTML = data.heading
+    webkit_heading_el.innerHTML = data.webkitCompassHeading
+    absolute_el.innerHTML = data.absolute
+    accuracy_el.innerHTML = data.webkitCompassAccuracy
 }
 
 window.addEventListener('deviceorientation', orientationHandler, false)
