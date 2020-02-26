@@ -1,9 +1,11 @@
+var roset = document.getElementById('rose')
+
 function orientationHandler(ev) {
     requestAnimationFrame(showAlpha(ev.alpha))
 }
 
 function showAlpha(a) {
-    $('#rose').attr('style', 'transform: rotate(' + a + 'deg)');
+    roset.style.transform = 'rotate(' + a + 'deg)'
 }
 
 window.addEventListener('deviceorientation', orientationHandler, false)
