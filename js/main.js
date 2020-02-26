@@ -9,8 +9,9 @@ function orientationHandler(ev) {
 }
 
 function showAlpha(ev) {
-    roset.style.transform = 'rotate(' + ev.alpha.toFixed(0) + 'deg)'
-    heading_el.innerHTML = ev.alpha
+    var heading = ev.alpha.toFixed(0)
+    roset.style.transform = 'rotate(' + heading + 'deg)'
+    heading_el.innerHTML = heading
     webkit_heading_el.innerHTML = ev.webkitCompassHeading
     absolute_el.innerHTML = ev.absolute
     accuracy_el.innerHTML = ev.webkitCompassAccuracy

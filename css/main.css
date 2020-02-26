@@ -107,6 +107,7 @@ h1 {
     color: #fff;
     opacity: .75;
     text-align: right;
+    font-size: smaller;
 }
 
 #hud dt {
